@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="images/mountain.ico">
+	<title>E M E R Y</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<script src="js/jquery.js"></script>
+    <script>
+    state1 = true;
+    $(document).ready(function(){
+		$('#yesbutton').click(function() {
+			$('#mainme').fadeOut(500, function(){
+				$('#five').css("opacity", "0");
+				$('#four').css("opacity", "0");
+				$('#three').css("opacity", "0");
+				$('#two').css("opacity", "0");
+				$('#one').css("opacity", "0");
+   				$('#mainme').css("display", "none");
+   				$('#mainabout').css("display", "inline");
+   				$('#one').animate({opacity: 1}, 100, function () {
+					$('#two').animate({opacity: 1}, 100, function () {
+						$('#three').animate({opacity: 1}, 100, function () {
+							$('#four').animate({opacity: 1}, 100, function () {
+								$('#five').animate({opacity: 1}, 100, function () {
+									state1 = false;
+   								});
+   							}); 
+   						}); 
+   					}); 			 
+   				}); 
+			}); 
+		});	
+	});
+
+	$(document).ready(function(){
+		$('#backbutton').click(function() {
+			$('#five').animate({opacity: 0}, 100, function () {
+				$('#four').animate({opacity: 0}, 100, function () {
+					$('#three').animate({opacity: 0}, 100, function () {
+						$('#two').animate({opacity: 0}, 100, function () {
+							$('#one').animate({opacity: 0}, 100, function () {
+									$('#mainabout').css("display", "none");
+					   				$('#mainme').fadeIn(1000, function() {
+					   					$('#mainme').css("display", "block-inline");
+					   					state1 = true;
+					   				});
+				   				});
+							});
+						});
+					});
+				});
+			});
+		});
+
+	</script>
+<body>
+<div class="main">
+
+	<div class="top"></div>
+
+	<div class="me" id="mainme">
+		<h1>I am Emery.</h1>
+		<p>I just graduated from Wellesley College. Now I need a job.</p>
+		<p> Do you want to give me a job?</p>
+		<button class="button" id="yesbutton" >Yes</button>
+	</div>	
+
+	<div class="about" id="mainabout" style="display: none;">
+		<div class="icons">
+			<a id="one" target="_blank" href="Resume.pdf" class=colorChange>
+				<img id="picOne" position="fixed" src="images/avatar.png" onmouseover="resumeover()" onmouseleave="resume()"/>
+			</a>
+			<a id="two"target="_blank" href="https://www.linkedin.com/in/emery-otopalik-4310548a" class=colorChange>
+				<img id="picTwo" position="fixed" src="images/linkedin.png" onmouseover="linkedinover()" onmouseleave="linkedin()"/>
+			</a>
+			<a id="three" target="_blank" href="https://github.com/emeryotopalik" class=colorChange>
+				<img id="picThree" position="fixed" src="images/github.png" onmouseover="githubover()" onmouseleave="github()"/>
+			</a>
+			<a id="four" href="#popup2" class=colorChange>
+				<img id="picFour" position="fixed" src="images/star.png" onmouseover="aiover()" onmouseleave="AI()"/>
+			</a>
+
+			<div id="popup2" class="overlay2">
+				<div class="popup2">
+					<h2>App Inventor</h2>
+					<a class="close2" href="#">x</a>
+					<div class="content2">
+						<p>App Inventor is a visual programming language geared to helping beginners design and build their own applications. The project was started by the MIT's Center for Learning and I was given the opportunity to contribute my own features to the software.</p>
+						<p>You can briefly read about my work <a target="_blank" href="Appinventor.pdf">here</a> or you can read not so briefly about my work <a target="_blank" href="http://www.tinkerblocks.org/appinventor/debugging">here</a>.</p>
+						<p>Check out App Inventor for yourself <a target="_blank" href="http://appinventor.mit.edu/explore/index-2.html">here</a>!</p>
+					</div>
+				</div>
+			</div>
+
+			<a id="five" href="mailto:emerycgo@gmail.com" class=colorChange>
+				<img id="picFive" position="static" src="images/mail.png" onmouseover="contactover()" onmouseleave="mail()"/>
+			</a>
+			<div class="backbutton">
+			<button class="button" id="backbutton">Back</button>
+			</div>
+			<div class="break"></div>
+	</div>
+</div>
+
+</div class="picofme">
+    <div class="image">
+    	<a href="#popup1"><img id="MyImage" src="images/me.png" onmouseover="devil()" onmouseleave="justme()"/></a>
+
+	<div id="popup1" class="overlay">
+		<div class="popup">
+			<h2>Some Facts</h2>
+			
+			<a class="close" href="#">x</a>
+			<div class="content">
+				<p>I took my first CS course on a complete whim and ~magically~ sort of fell in love with it. Since then, I have learned lots of cool new things. Most recently, I took a Computer Security course and it <a target="_blank" href="http://arstechnica.com/security/2013/10/meet-badbios-the-mysterious-mac-and-pc-malware-that-jumps-airgaps/">scared the heck out of me</a>.</p>
+				<p>I like to play Ultimate Frisbee with my <a target="_blank" href="http://cs.wellesley.edu/~casschris/Documents/beta/about.html">friends</a>.</p>
+				<p>When I can, I create and explore new recipes. These lemon bars are my most recent <a target="_blank" href="http://cooking.nytimes.com/recipes/1017141-lemon-bars-with-olive-oil-and-sea-salt">favorite</a>.</p>
+				<p>My initials spell "ego" but swear I do not have one.</p>
+			</div>
+		</div>
+	</div>
+	</div>
+	<p align="right">Purakaunui Bay, Otago, New Zealand (July 2014)&nbsp&nbsp</p>
+	<script>
+		function devil() {
+			var image = document.getElementById('MyImage');
+			image.src="images/meAsDevil.png"
+		}
+		function justme() {
+			var image = document.getElementById('MyImage');
+			image.src="images/me.png"
+		}
+		function resumeover() {
+			var image = document.getElementById("picOne");
+			image.src="images/resumeOver.png"
+		}
+		function resume() {
+			var image = document.getElementById("picOne");
+			image.src="images/avatar.png"
+		}
+		function linkedinover() {
+			var image = document.getElementById("picTwo");
+			image.src="images/linkedinOver.png"
+		}
+		function linkedin() {
+			var image = document.getElementById("picTwo");
+			image.src="images/linkedin.png"
+		}
+		function githubover() {
+			var image = document.getElementById("picThree");
+			image.src="images/githubOver.png"
+		}
+		function github() {
+			var image = document.getElementById("picThree");
+			image.src="images/github.png"
+		}
+		function aiover() {
+			var image = document.getElementById("picFour");
+			image.src="images/AIOver.png"
+		}
+		function AI() {
+			var image = document.getElementById("picFour");
+			image.src="images/star.png"
+		}
+		function contactover() {
+			var image = document.getElementById("picFive");
+			image.src="images/contactOver.png"
+		}
+		function mail() {
+			var image = document.getElementById("picFive");
+			image.src="images/mail.png"
+		}
+	</script>
+</div>
+
+	<div class="copyright">
+		<p>&copy; Emery Otopalik 2016 | Icons made by Bogdan Rosu and Dave Gandy from www.flaticon.com</p>
+	</div>
+</body>
+</html>
